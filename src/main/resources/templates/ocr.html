@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="ocr.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <span class="brand">Wellcome  OCR service</span>
+    </div>
+    <div class="container-fluid">
+        <div class="body">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="btnGroup">
+                            <button class="btn-active btn" id="btn1" onclick="changeToMode1()">Normal mode</button>
+                            <button class="btn-deactive btn float-right" id="btn2" onclick="changeToMode2()">Execution mode</button>
+                        </div>
+                        <div class="img-input1" onclick="togglePopup1()" id="image1">
+                            <h4>
+                                Please give a license<br> (Press to start shooting)
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-flex justify-content-center">
+                        <button class="btn-deactive" id="anl1" disabled onclick="analytic1()">analytics1</button>
+                    </div>
+                    <div class="col-lg-5 output">
+                        <div class="float-xl-right">
+                            <div class="form-group item" id="user1">
+                                <label for="">List matching: </label>
+                                <span id="matching"></span>
+                            </div>
+                            <div class="item">
+                                <label>Fullname:</label>
+                                <input type="text" class="" id="fullname" readonly>
+                            </div>
+                            <div class="item">
+                                <label>Address:</label>
+                                <input type="text" class="" id="address" readonly>
+                            </div>
+                            <div class="item">
+                                <label>Date of birth:</label>
+                                <input type="text" id="dateOb" readonly>
+                            </div>
+                            <div class="item">
+                                <label>Date of issue:</label>
+                                <input type="text" id="dateRange" readonly>
+                            </div>
+                            <div class="item">
+                                <label for="address">Expiry date</label>
+                                <input type="text" id="dateExpiry" readonly>
+                            </div>
+                            <div class="item">
+                                <label for="address">Status:</label>
+                                <input type="text" id="status" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="display: none;" id="mode2">
+                    <div class="col-lg-4">
+                        <div class="img-input1" onclick="togglePopup2()" id="image2">
+                            <h4>
+                                Please give a license<br> (Press to start shooting)
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn-deactive" id="anl2" disabled onclick="analytic2()">analytics2</button>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="item" id="showPercent">
+                            <label for="">Percent:</label>
+                            <span id="percent"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup" id="popup-1">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="close-btn btn " onclick="togglePopup1()">Shoot</div>
+                        <h1>Take a photo</h1>
+                        <div class="mockImg">
+                            <img id="img1" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="popup" id="popup-2">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="close-btn btn" onclick="togglePopup2()">Shoot</div>
+                        <h1>Take a photo</h1>
+                        <div class="mockImg">
+                            <img id="img2" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="ocr.js"></script>
+</body>
+
+</html>
